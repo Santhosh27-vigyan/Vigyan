@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-10-21T12:52:58 IST" name="Suite" finished-at="2024-10-21T12:53:34 IST" duration-ms="36514">
+    <groups>
+    </groups>
+    <test started-at="2024-10-21T12:52:58 IST" name="Test" finished-at="2024-10-21T12:53:34 IST" duration-ms="36514">
+      <class name="FinalCalls.ResourceCreationFinalCall">
+        <test-method is-config="true" signature="intializeDriver()[pri:0, instance:FinalCalls.ResourceCreationFinalCall@3a7442c7]" started-at="2024-10-21T12:52:58 IST" name="intializeDriver" finished-at="2024-10-21T12:53:02 IST" duration-ms="3642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intializeDriver -->
+        <test-method signature="LoginPage()[pri:1, instance:FinalCalls.ResourceCreationFinalCall@3a7442c7]" started-at="2024-10-21T12:53:02 IST" name="LoginPage" finished-at="2024-10-21T12:53:02 IST" duration-ms="517" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginPage -->
+        <test-method signature="Home(java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResourceCreationFinalCall@3a7442c7]" started-at="2024-10-21T12:53:03 IST" name="Home" data-provider="dataProvider" finished-at="2024-10-21T12:53:22 IST" depends-on-methods="FinalCalls.ResourceCreationFinalCall.LoginPage" duration-ms="18952" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Linux CLI]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Storage_Linux_Sep17]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Home -->
+        <test-method signature="CreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:FinalCalls.ResourceCreationFinalCall@3a7442c7]" started-at="2024-10-21T12:53:22 IST" name="CreateNew" data-provider="dataProvider" finished-at="2024-10-21T12:53:34 IST" depends-on-methods="FinalCalls.ResourceCreationFinalCall.Home" duration-ms="12010" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[AT_Testing]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Ubuntu 22.04 LTS (CLI)]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[vertical]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[40]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2-6]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[2-6]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[40]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Daily]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[3 days]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[10.150.44.0 - null]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[VM_Test_HZZ]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[lead2=admin,lead3=user,Pradeep=user]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.apache.commons.math3.exception.MaxCountExceededException">
+            <message>
+              <![CDATA[illegal state: maximal count (1) exceeded]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.apache.commons.math3.exception.MaxCountExceededException: illegal state: maximal count (1) exceeded
+at resourceManagementPageObjects.CreateNewPageObjects.SetNumberOfVirtualMachines(CreateNewPageObjects.java:657)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:58)
+at FinalCalls.ResourceCreationFinalCall.CreateNew(ResourceCreationFinalCall.java:55)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.commons.math3.exception.MaxCountExceededException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateNew -->
+      </class> <!-- FinalCalls.ResourceCreationFinalCall -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
