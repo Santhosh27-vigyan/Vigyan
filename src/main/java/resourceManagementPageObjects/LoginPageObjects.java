@@ -33,9 +33,9 @@ public class LoginPageObjects {
 	@FindBy(id = "loginBtn")
 	private WebElement Login;
 	public void cert() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 		long startTime = System.currentTimeMillis();
-		for (int i = 0; i < 2; i++) {
+		
 		try {
 			wait.until(ExpectedConditions.visibilityOf(certification));
 			clicks();
@@ -44,7 +44,7 @@ public class LoginPageObjects {
 			System.out.println("Exception caught after: " + (endTime - startTime) + " ms");
 		}
 		}
-	}
+	
 	public void clicks()
 	{
 		certification.click();

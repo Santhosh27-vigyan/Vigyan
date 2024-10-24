@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="FinalCalls.ResourceCreationFinalCall" class="method navigator-link" hash-for-method="CreateNew(Mysuru, India, AT_Testing, Storage_Linux_Sep17 - 780GB, Rocky Linux 9 SIEM, 200, horizontal, custom,...)">CreateNew(Mysuru, India, AT_Testing, Storage_Linux_Sep17 - 780GB, Rocky Linux 9 SIEM, 200, horizontal, custom,...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="FinalCalls.ResourceCreationFinalCall" class="method navigator-link" hash-for-method="CreateNew(Mysuru, India, EC_Windows_VM, Storage_Linux_Sep17 - 780GB, Ubuntu22.04 LTS(CLI)-PostgreSQL, 4000, ho...)">CreateNew(Mysuru, India, EC_Windows_VM, Storage_Linux_Sep17 - 780GB, Ubuntu22.04 LTS(CLI)-PostgreSQL, 4000, ho...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -117,12 +117,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="FinalCalls.ResourceCreationFinalCall" class="method navigator-link" hash-for-method="Home(SIEM Server, Storage_Linux_Sep17)">Home(SIEM Server, Storage_Linux_Sep17)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="FinalCalls.ResourceCreationFinalCall" class="method navigator-link" hash-for-method="Home(Postgres DB, EC_Test_Linux_Storage_OCT_600)">Home(Postgres DB, EC_Test_Linux_Storage_OCT_600)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="FinalCalls.ResourceCreationFinalCall" class="method navigator-link" hash-for-method="LoginPage">LoginPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="FinalCalls.ResourceCreationFinalCall" class="method navigator-link" hash-for-method="LoginPage(Postgres DB)">LoginPage(Postgres DB)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -145,14 +145,14 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="CreateNew(Mysuru, India, AT_Testing, Storage_Linux_Sep17 - 780GB, Rocky Linux 9 SIEM, 200, horizontal, custom,...)">
-                  </a> <!-- CreateNew(Mysuru, India, AT_Testing, Storage_Linux_Sep17 - 780GB, Rocky Linux 9 SIEM, 200, horizontal, custom,...) -->
+                  <a name="CreateNew(Mysuru, India, EC_Windows_VM, Storage_Linux_Sep17 - 780GB, Ubuntu22.04 LTS(CLI)-PostgreSQL, 4000, ho...)">
+                  </a> <!-- CreateNew(Mysuru, India, EC_Windows_VM, Storage_Linux_Sep17 - 780GB, Ubuntu22.04 LTS(CLI)-PostgreSQL, 4000, ho...) -->
                   <span class="method-name">CreateNew</span>
-                  <span class="parameters">(Mysuru, India,AT_Testing,Storage_Linux_Sep17 - 780GB,Rocky Linux 9 SIEM,200,horizontal,custom,VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ,40,60,8,10,40,yes,yes,2,yes,Daily,3 days,no,SIEM_TEST_server4 - 10.150.44.190,10.150.44.0 - null,no,lead2=admin,lead3=user,Pradeep=user,1,test10)</span>
-                  <div class="stack-trace">java.lang.Error: Given VM Name test10 is Already Taken
-	at resourceManagementPageObjects.CreateNewPageObjects.GiveVMName(CreateNewPageObjects.java:616)
-	at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:38)
-	at FinalCalls.ResourceCreationFinalCall.CreateNew(ResourceCreationFinalCall.java:57)
+                  <span class="parameters">(Mysuru, India,EC_Windows_VM,Storage_Linux_Sep17 - 780GB,Ubuntu22.04 LTS(CLI)-PostgreSQL,4000,horizontal,custom,VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ,20,60,60,4,60,yes,yes,1,no,Weekly,4 weeks,yes,SIEM_TEST_server4 - 10.150.44.190,10.150.44.0 - null,no,lead2=admin,karthik=admin,lead1=user,test1=admin,1,TestAT1)</span>
+                  <div class="stack-trace">javax.naming.InsufficientResourcesException: Insufficient resources to allow horizontal scaling
+	at resourceManagementPageObjects.CreateNewPageObjects.SetVcpu(CreateNewPageObjects.java:281)
+	at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:27)
+	at FinalCalls.ResourceCreationFinalCall.CreateNew(ResourceCreationFinalCall.java:62)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 31 stack frames
 </div> <!-- stack-trace -->
@@ -168,17 +168,18 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Home(SIEM Server, Storage_Linux_Sep17)">
-                  </a> <!-- Home(SIEM Server, Storage_Linux_Sep17) -->
+                  <a name="Home(Postgres DB, EC_Test_Linux_Storage_OCT_600)">
+                  </a> <!-- Home(Postgres DB, EC_Test_Linux_Storage_OCT_600) -->
                   <span class="method-name">Home</span>
-                  <span class="parameters">(SIEM Server,Storage_Linux_Sep17)</span>
+                  <span class="parameters">(Postgres DB,EC_Test_Linux_Storage_OCT_600)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginPage">
-                  </a> <!-- LoginPage -->
+                  <a name="LoginPage(Postgres DB)">
+                  </a> <!-- LoginPage(Postgres DB) -->
                   <span class="method-name">LoginPage</span>
+                  <span class="parameters">(Postgres DB)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -194,6 +195,7 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;ResourceName&quot; value=&quot;DefaultType&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;FinalCalls.ResourceCreationFinalCall&quot;/&gt;
     &lt;/classes&gt;
@@ -239,20 +241,20 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'CreateNew')
 data.setCell(0, 2, 'FinalCalls.ResourceCreationFinalCall')
-data.setCell(0, 3, 14357);
+data.setCell(0, 3, 25978);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Home')
 data.setCell(1, 2, 'FinalCalls.ResourceCreationFinalCall')
-data.setCell(1, 3, 13628);
+data.setCell(1, 3, 15430);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'LoginPage')
 data.setCell(2, 2, 'FinalCalls.ResourceCreationFinalCall')
-data.setCell(2, 3, 12574);
+data.setCell(2, 3, 5006);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 40 seconds</span>
+              <span class="suite-total-time">Total running time: 46 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -284,18 +286,18 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">LoginPage</span>
-                <span class="method-start">2993 ms</span>
+                <span class="method-name">LoginPage(Postgres DB)</span>
+                <span class="method-start">2702 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">Home(SIEM Server, Storage_Linux_Sep17)</span>
-                <span class="method-start">16869 ms</span>
+                <span class="method-name">Home(Postgres DB, EC_Test_Linux_Storage_OCT_600)</span>
+                <span class="method-start">7889 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">CreateNew(Mysuru, India, AT_Testing, Storage_Linux_Sep17 - 780GB, Rocky Linux 9 SIEM, 200, horizontal, custom,...)</span>
-                <span class="method-start">30595 ms</span>
+                <span class="method-name">CreateNew(Mysuru, India, EC_Windows_VM, Storage_Linux_Sep17 - 780GB, Ubuntu22.04 LTS(CLI)-PostgreSQL, 4000, ho...)</span>
+                <span class="method-start">23440 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

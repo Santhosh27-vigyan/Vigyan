@@ -39,9 +39,9 @@ public String GetAvailableSize(String StoragePath)
 	AddStorageButton.click();
 	wait.until(ExpectedConditions.visibilityOf(StorageTitle));
 wait.until(ExpectedConditions.visibilityOfAllElements(TableHeaderNames));
-	System.out.println(TableHeaderNames.size());
+//	System.out.println(TableHeaderNames.size());
 	mainloop:	for (int i=0;i<TableHeaderNames.size();i++) {
-		System.out.println(TableHeaderNames.get(i).getText());
+	//	System.out.println(TableHeaderNames.get(i).getText());
 		if(TableHeaderNames.get(i).getText().equalsIgnoreCase("Storage"))
 		{
 			for (int j = 0; j < TableData.size(); j++) {

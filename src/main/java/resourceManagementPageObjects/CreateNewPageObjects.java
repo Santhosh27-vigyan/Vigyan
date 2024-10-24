@@ -25,6 +25,7 @@ public class CreateNewPageObjects {
 	public WebDriver driver;
 	private WebDriverWait wait;
 	private WebDriverWait wait2;
+	private WebDriverWait wait3;
 	private JavascriptExecutor js;
 	private Actions a;
 
@@ -32,9 +33,9 @@ public class CreateNewPageObjects {
 		this.driver = driver;
 		a = new Actions(driver);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(50));
-		wait2 = new WebDriverWait(driver, Duration.ofSeconds(3));
+		wait2 = new WebDriverWait(driver, Duration.ofSeconds(1));
 		js = (JavascriptExecutor) driver;
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, this);
 	}
 
@@ -87,7 +88,7 @@ public class CreateNewPageObjects {
 	@FindBy(xpath = "//label[@for='vcpu_range_1']/parent::div //span[@class='irs-single']")
 	private WebElement VerticalScalingVcpuFromToValue;
 	@FindBy(xpath = "//div[@role='dialog']")
-	private WebElement VcpuAlert;
+	private WebElement Alert;
 	@FindBy(xpath = "//button[contains(@class,'bootbox-accept')]")
 	private WebElement AlertOkButton;
 	@FindBy(className = "bootbox-body")
@@ -217,6 +218,14 @@ public class CreateNewPageObjects {
 
 	public void ClickHorizontalScalingButton() {
 		js.executeScript("arguments[0].click();", HorizontalScalingButton);
+		if (InsufficienterrorMessage.getAttribute("style").contains("inline"))
+			throw new Error(InsufficienterrorMessage.getText());
+	}
+
+	public void ClickVerticalScalingButton() {
+		js.executeScript("arguments[0].click();", VerticalScalingButton);
+		if (InsufficienterrorMessage.getAttribute("style").contains("inline"))
+			throw new Error(InsufficienterrorMessage.getText());
 	}
 
 	public void SelectCustomOrSavedTemplate(String SelectedOption) {
@@ -247,6 +256,7 @@ public class CreateNewPageObjects {
 	public void SetVcpu(String value) throws InsufficientResourcesException {
 		if (value.contains("-"))
 			throw new Error("Cannot have values in " + value + " format");
+
 		ConditionCheck(value, VcpuValueMin);
 		if (Integer.parseInt(value) <= Integer.parseInt(VcpuValueMax.getText())) {
 			VcpuScalingButton.click();
@@ -267,7 +277,6 @@ public class CreateNewPageObjects {
 						throw new Error("Script error");
 				}
 			}
-
 			if (InsufficienterrorMessage.getAttribute("style").contains("inline"))
 				throw new InsufficientResourcesException(InsufficienterrorMessage.getText());
 		} else {
@@ -284,28 +293,34 @@ public class CreateNewPageObjects {
 		// wait.until(ExpectedConditions.textToBePresentInElement(VerticalScalingVcpuToValue,"4"));
 		if (Integer.parseInt(FromAndTo[1]) <= Integer.parseInt(VerticalVcpuScalingMax.getText())) {
 			mainloop: while (true) { // System.out.println(VerticalScalingVcpuToValue.getText()+" "+FromAndTo[1]);
-				if (VerticalScalingVcpuToValue.getAttribute("style").contains("visible")) {
-					if (VerticalScalingVcpuToValue.getText().equals(FromAndTo[1]) || FromAndTo[1].equals("4"))
-						break mainloop;
-					else
-						a.moveToElement(VerticalVcpuScalingToButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
-
-				} else if (VerticalScalingVcpuToValue.getAttribute("style").contains("hidden")) {
-					// System.out.println(VerticalScalingVcpuFromToValue.getText().contains(FromAndTo[1])
-					// || FromAndTo[1].equals("4"));
-					if (VerticalScalingVcpuFromToValue.getText().contains(FromAndTo[1]) || FromAndTo[1].equals("4"))
-						break mainloop;
-					else
-						a.moveToElement(VerticalVcpuScalingToButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
-				}
+//				if (VerticalScalingVcpuToValue.getAttribute("style").contains("visible")) {
+//					if (VerticalScalingVcpuToValue.getText().equals(FromAndTo[1]) || FromAndTo[1].equals("4"))
+//						break mainloop;
+//					else
+//						a.moveToElement(VerticalVcpuScalingToButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+//
+//				} else if (VerticalScalingVcpuToValue.getAttribute("style").contains("hidden")) {
+//					// System.out.println(VerticalScalingVcpuFromToValue.getText().contains(FromAndTo[1])
+//					// || FromAndTo[1].equals("4"));
+//					if (VerticalScalingVcpuFromToValue.getText().contains(FromAndTo[1]) || FromAndTo[1].equals("4"))
+//						break mainloop;
+//					else
+//						a.moveToElement(VerticalVcpuScalingToButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+//				}
+				String[] VerticalScalingVcpuToValueGettext = ((String) js
+						.executeScript("return arguments[0].textContent;", VerticalScalingVcpuToValue)).split("\\s+G");
+				if (VerticalScalingVcpuToValueGettext[0].equals(FromAndTo[1]) || FromAndTo[1].equals("4"))
+					break mainloop;
+				else
+					a.moveToElement(VerticalVcpuScalingToButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
 				try {
-					Thread.sleep(100);
+					Thread.sleep(300);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				if (VerticalScalingVcpuToValue.getText() != "") {
-					if (Integer.parseInt(String.valueOf(VerticalScalingVcpuToValue.getText())) > Integer
+				if (VerticalScalingVcpuToValueGettext[0] != "") {
+					if (Integer.parseInt(String.valueOf(VerticalScalingVcpuToValueGettext[0])) > Integer
 							.parseInt(FromAndTo[1]))
 						throw new Error("Script error");
 				}
@@ -318,38 +333,52 @@ public class CreateNewPageObjects {
 		if (Integer.parseInt(FromAndTo[0]) >= 2) {
 			VerticalVcpuScalingFromButton.click();
 			mainloop1: while (true) {
-				if (VerticalScalingVcpuFromValue.getAttribute("style").contains("visible")) {// System.out.println(VerticalScalingVcpuFromValue.getText()+"
-																								// "+FromAndTo[0]);
-					if (VerticalScalingVcpuFromValue.getText().equals(FromAndTo[0]))
-						break mainloop1;
-					else
-						a.moveToElement(VerticalVcpuScalingFromButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
-				} else if (VerticalScalingVcpuFromValue.getAttribute("style").contains("hidden")) {
-
-					if (VerticalScalingVcpuFromToValue.getText().contains(FromAndTo[0]) || FromAndTo[0].equals("2"))
-						break mainloop1;
-					else
-						a.moveToElement(VerticalVcpuScalingFromButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
-				}
-				try {
-					Thread.sleep(500);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				if (VerticalScalingVcpuToValue.getText() == "") {
+//				if (VerticalScalingVcpuFromValue.getAttribute("style").contains("visible")) {// System.out.println(VerticalScalingVcpuFromValue.getText()+"
+//																								// "+FromAndTo[0]);
+//					if (VerticalScalingVcpuFromValue.getText().equals(FromAndTo[0]))
+//						break mainloop1;
+//					else
+//						a.moveToElement(VerticalVcpuScalingFromButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+//				} else if (VerticalScalingVcpuFromValue.getAttribute("style").contains("hidden")) {
+//
+//					if (VerticalScalingVcpuFromToValue.getText().contains(FromAndTo[0]) || FromAndTo[0].equals("2"))
+//						break mainloop1;
+//					else
+//						a.moveToElement(VerticalVcpuScalingFromButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+//				}
+				String[] VerticalScalingVcpuFromValueGettext = ((String) js
+						.executeScript("return arguments[0].textContent;", VerticalScalingVcpuFromValue))
+						.split("\\s+G");
+				System.out.println(Integer.parseInt(VerticalScalingVcpuFromValueGettext[0].replace(" ", "").trim())
+						+ "  " + FromAndTo[1]);
+				if (!(Integer.parseInt(VerticalScalingVcpuFromValueGettext[0].replace(" ", "").trim()) < Integer
+						.valueOf(FromAndTo[1]))) {
 					try {
-
-						if (VcpuAlert.isDisplayed()) {
+						if (Alert.isDisplayed()) {
 							wait.until(ExpectedConditions.elementToBeClickable(AlertOkButton));
-							System.out.println(AlertOkButton.isDisplayed());
-							AlertOkButton.click();
+							try {
+								Thread.sleep(100);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 							// js.executeScript("arguments[0].click();", AlertOkButton);
+							AlertOkButton.click();
 							throw new Error(AlertMessage.getText());
 						}
 					} catch (NoSuchElementException e) {
 						// TODO: handle exception
 					}
+				}
+				if (VerticalScalingVcpuFromValueGettext[0].equals(FromAndTo[0]))
+					break mainloop1;
+				else
+					a.moveToElement(VerticalVcpuScalingFromButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
 			if (InsufficienterrorMessage.getAttribute("style").contains("inline"))
@@ -367,7 +396,7 @@ public class CreateNewPageObjects {
 		String[] Max = RamValueMax.getText().split("\\s+G");
 		if (Integer.parseInt(value) <= Integer.parseInt(Max[0].replace(" ", ""))) {
 			mainloop: while (true) {
-				System.out.println(RamValue.getText() + " " + value + " " + "GB");
+				// System.out.println(RamValue.getText() + " " + value + " " + "GB");
 				if (RamValue.getText().equals(value + " " + "GB"))
 					break mainloop;
 				else
@@ -397,32 +426,40 @@ public class CreateNewPageObjects {
 			throw new Error("need From and Two value (ex: 2-6) for vertical scaling");
 		String[] Max = VerticalScalingRamValueMax.getText().split("\\s+G");
 		String min = ConditionCheck(value, VerticalScalingRamValueMin);
-
 		VerticalRamScalingToButton.click();
-
 		if (Integer.parseInt(FromAndTo[1]) <= Integer.parseInt(Max[0].replace(" ", ""))) {
 			mainloop: while (true) {
-				if (VerticalScalingRamToValue.getAttribute("style").contains("visible")) {
-					// System.out.println(VerticalScalingRamToValue.getText()+" "+FromAndTo[1]);
-					if (VerticalScalingRamToValue.getText().equals(FromAndTo[1] + " " + "GB")
-							|| FromAndTo[1].equals("4" + " " + "GB"))
-						break mainloop;
-					else
-						a.moveToElement(VerticalRamScalingToButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
-				} else if (VerticalScalingRamToValue.getAttribute("style").contains("hidden")) {
-					// System.out.println(VerticalScalingRamFromToValue.getText()+"
-					// "+FromAndTo[1]+VerticalScalingRamFromToValue.getText().contains(FromAndTo[1]+
-					// " " + "GB"));
-					if (VerticalScalingRamFromToValue.getText().contains(FromAndTo[1] + " " + "GB")
-							|| FromAndTo[1].equals("4" + " " + "GB"))
-						break mainloop;
-					else
-						a.moveToElement(VerticalRamScalingToButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+//				if (VerticalScalingRamToValue.getAttribute("style").contains("visible")) {
+//					// System.out.println(VerticalScalingRamToValue.getText()+" "+FromAndTo[1]);
+//					if (VerticalScalingRamToValue.getText().equals(FromAndTo[1] + " " + "GB")
+//							|| FromAndTo[1].equals("4" + " " + "GB"))
+//						break mainloop;
+//					else
+//						a.moveToElement(VerticalRamScalingToButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+//				} else if (VerticalScalingRamToValue.getAttribute("style").contains("hidden")) {
+//					// System.out.println(VerticalScalingRamFromToValue.getText()+"
+//					// "+FromAndTo[1]+VerticalScalingRamFromToValue.getText().contains(FromAndTo[1]+
+//					// " " + "GB"));
+//					if (VerticalScalingRamFromToValue.getText().contains(FromAndTo[1] + " " + "GB")
+//							|| FromAndTo[1].equals("4" + " " + "GB"))
+//						break mainloop;
+//					else
+//						a.moveToElement(VerticalRamScalingToButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+//				}
+				String[] RamToValueGettext = ((String) js.executeScript("return arguments[0].textContent;",
+						VerticalScalingRamToValue)).split("\\s+G");
+				if (RamToValueGettext[0].replace(" ", "").trim().equals(FromAndTo[1]) || FromAndTo[1].equals("4"))
+					break mainloop;
+				else
+					a.moveToElement(VerticalRamScalingToButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-
-				String[] RamValue = VerticalScalingRamToValue.getText().split("\\s+G");
-				if (VerticalScalingRamToValue.getText() != "")
-					if (Integer.parseInt(String.valueOf(RamValue[0].replace(" ", "").trim())) > Integer
+				if (RamToValueGettext[0].replace(" ", "").trim() != "")
+					if (Integer.parseInt(String.valueOf(RamToValueGettext[0].replace(" ", "").trim())) > Integer
 							.parseInt(FromAndTo[1]))
 						throw new Error("Script error");
 			}
@@ -432,32 +469,43 @@ public class CreateNewPageObjects {
 		VerticalRamScalingFromButton.click();
 		if (Integer.parseInt(FromAndTo[0]) >= Integer.parseInt(min.replace(" ", ""))) {
 			mainloop1: while (true) {// System.out.println(VerticalScalingRamFromValue.getText()+" "+FromAndTo[0]);
-				if (VerticalScalingRamFromValue.getAttribute("style").contains("visible")) {
-					if (VerticalScalingRamFromValue.getText().equals(FromAndTo[0] + " " + "GB")
-							|| FromAndTo[0].equals("2" + " " + "GB"))
-						break mainloop1;
-					else
-						a.moveToElement(VerticalRamScalingFromButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
-				} else if (VerticalScalingRamFromValue.getAttribute("style").contains("hidden")) {
-					// System.out.println(VerticalScalingRamFromToValue.getText()+"
-					// "+FromAndTo[0]+VerticalScalingRamFromToValue.getText().contains(FromAndTo[0]+
-					// " " + "GB"));
-					if (VerticalScalingRamFromToValue.getText().contains(FromAndTo[0] + " " + "GB")
-							|| FromAndTo[0].equals("2" + " " + "GB"))
-						break mainloop1;
-					else
-						a.moveToElement(VerticalRamScalingFromButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
-				}
-				try {
-					Thread.sleep(500);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				if (VerticalScalingRamFromValue.getText() == "") {
+//				if (VerticalScalingRamFromValue.getAttribute("style").contains("visible")) {
+//					if (VerticalScalingRamFromValue.getText().equals(FromAndTo[0] + " " + "GB")
+//							|| FromAndTo[0].equals("2" + " " + "GB"))
+//						break mainloop1;
+//					else
+//						a.moveToElement(VerticalRamScalingFromButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+//				} else if (VerticalScalingRamFromValue.getAttribute("style").contains("hidden")) {
+//					// System.out.println(VerticalScalingRamFromToValue.getText()+"
+//					// "+FromAndTo[0]+VerticalScalingRamFromToValue.getText().contains(FromAndTo[0]+
+//					// " " + "GB"));
+//					if (VerticalScalingRamFromToValue.getText().contains(FromAndTo[0] + " " + "GB")
+//							|| FromAndTo[0].equals("2" + " " + "GB"))
+//						break mainloop1;
+//					else
+//						a.moveToElement(VerticalRamScalingFromButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+//				}
+//				try {
+//					Thread.sleep(500);
+//				} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+				String[] RamFromValueGettext = ((String) js.executeScript("return arguments[0].textContent;",
+						VerticalScalingRamFromValue)).split("\\s+G");
+				System.out.println(!(Integer.parseInt(RamFromValueGettext[0].replace(" ", "").trim()) < Integer
+						.valueOf(FromAndTo[1])));
+				if (!(Integer.parseInt(RamFromValueGettext[0].replace(" ", "").trim()) < Integer
+						.valueOf(FromAndTo[1]))) {
 					try {
-						if (VcpuAlert.isDisplayed()) {
+						if (Alert.isDisplayed()) {
 							wait.until(ExpectedConditions.elementToBeClickable(AlertOkButton));
+							try {
+								Thread.sleep(100);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 							// js.executeScript("arguments[0].click();", AlertOkButton);
 							AlertOkButton.click();
 							throw new Error(AlertMessage.getText());
@@ -465,6 +513,16 @@ public class CreateNewPageObjects {
 					} catch (NoSuchElementException e) {
 						// TODO: handle exception
 					}
+				}
+				if (RamFromValueGettext[0].replace(" ", "").trim().equals(FromAndTo[0]) || FromAndTo[0].equals("2"))
+					break mainloop1;
+				else
+					a.moveToElement(VerticalRamScalingFromButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
 			if (InsufficienterrorMessage.getAttribute("style").contains("inline"))
@@ -492,10 +550,8 @@ public class CreateNewPageObjects {
 					e.printStackTrace();
 				}
 				String[] DiskValue = DiskSizeValue.getText().split("\\s+G");
-				if (DiskSizeValue.getText() != "")
-					if (Integer.parseInt(String.valueOf(DiskValue[0].replace(" ", "").trim())) > Integer
-							.parseInt(value))
-						throw new Error("Script error");
+				if (Integer.parseInt(String.valueOf(DiskValue[0].replace(" ", "").trim())) > Integer.parseInt(value))
+					throw new Error("Script error");
 			}
 			if (InsufficienterrorMessage.getAttribute("style").contains("inline"))
 				throw new InsufficientResourcesException(InsufficienterrorMessage.getText());
@@ -522,13 +578,9 @@ public class CreateNewPageObjects {
 					e.printStackTrace();
 				}
 				String[] DiskValue = VerticalScalingDiskSizeValue.getText().split("\\s+G");
-				if (VerticalScalingDiskSizeValue.getText() != "")
-					if (Integer.parseInt(String.valueOf(DiskValue[0].replace(" ", "").trim())) > Integer
-							.parseInt(value))
-						throw new Error("Script error");
-
+				if (Integer.parseInt(String.valueOf(DiskValue[0].replace(" ", "").trim())) > Integer.parseInt(value))
+					throw new Error("Script error");
 			}
-
 			if (InsufficienterrorMessage.getAttribute("style").contains("inline"))
 				throw new InsufficientResourcesException(InsufficienterrorMessage.getText());
 		} else {
@@ -599,6 +651,29 @@ public class CreateNewPageObjects {
 	public void SelectVlan(String VlanName) {
 		Select Vlan = new Select(VlanOptions);
 		Vlan.selectByVisibleText(VlanName);
+		try {
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println((Alert.isDisplayed()) + " Alert");
+			if (Alert.isDisplayed()) {
+				wait.until(ExpectedConditions.elementToBeClickable(AlertOkButton));
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				// js.executeScript("arguments[0].click();", AlertOkButton);
+				AlertOkButton.click();
+				throw new Error(AlertMessage.getText());
+			}
+		} catch (NoSuchElementException e) {
+			// TODO: handle exception
+		}
 	}
 
 	public void GiveVMName(String Name, String ScalingType) {
@@ -611,7 +686,7 @@ public class CreateNewPageObjects {
 //			System.out.println(Names.length + Names[i]);
 //			System.out.println(VmNameTextBox.size() + "VmNameTextBox");
 			VmNameTextBox.get(i).sendKeys(Names[i]);
-			System.out.println(AvailabityMessage.get(i).getText());
+			// System.out.println(AvailabityMessage.get(i).getText());
 			if (AvailabityMessage.get(i).getText().contains("Taken"))
 				throw new Error("Given VM Name " + Names[i] + " is " + AvailabityMessage.get(i).getText());
 		}
@@ -684,10 +759,13 @@ public class CreateNewPageObjects {
 		}
 		if (AllErrorMessage.size() > 0)
 			throw new java.lang.Error(Error);
-	}
-
-	public void ClickVerticalScalingButton() {
-		js.executeScript("arguments[0].click();", VerticalScalingButton);
+		else {
+			wait.until(ExpectedConditions.visibilityOf(UserReatedErrorMessage));
+			if (UserReatedErrorMessage.getText().contains("Error"))
+				throw new java.lang.Error(UserReatedErrorMessage.getText());
+			else
+				System.out.println(UserReatedErrorMessage.getText());
+		}
 	}
 
 	public void SetNumberOfVirtualMachines(String Count) {
@@ -724,7 +802,6 @@ public class CreateNewPageObjects {
 						+ " or Not a even Number");
 			}
 		}
-
 		return min[0];
 	}
 }

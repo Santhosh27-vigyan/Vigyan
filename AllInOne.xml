@@ -4,7 +4,7 @@
   <test name="Test">
   <parameter name="ResourceName" value="DefaultType"></parameter>
     <classes>
-      <class name="FinalCalls.ResourceCreationFinalCall"/>
+      <class name="FinalCalls.ResouceCreationAllInOneCall"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

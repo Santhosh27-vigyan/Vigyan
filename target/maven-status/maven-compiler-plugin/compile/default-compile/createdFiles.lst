@@ -1,5 +1,6 @@
 utilities\ExcelUtils.class
 resources\Base.class
+resources\PreConditions.class
 resourceManagementPageObjects\CreateNewPageObjects.class
 resourceManagementPageObjects\HomePagePageObjects.class
 resourceManagementPageObjects\StoragePageObjects.class

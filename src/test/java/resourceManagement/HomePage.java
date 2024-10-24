@@ -13,8 +13,9 @@ public class HomePage {
 		this.driver = driver;
 	}
 
-	public String  HomePageActions(String ResourceName,String StoragePathName) {
+	public String  HomePageActions(String ResourceName,String StoragePathName,String RowNumber) {
 		Hppo = new HomePagePageObjects(driver);
+		if(!RowNumber.equalsIgnoreCase("All"))
 		Hppo.ResourceManagementOption().click();
 		Spo=new StoragePageObjects(driver);
 		String StroragePathName=Spo.GetAvailableSize(StoragePathName);

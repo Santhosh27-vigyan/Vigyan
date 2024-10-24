@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 45.69 s <<< FAILURE! -- in TestSuite
-FinalCalls.ResourceCreationFinalCall.CreateNew[Mysuru, India, AT_Testing, Storage_Linux_Sep17 - 780GB, Rocky Linux 9 SIEM, 200, horizontal, custom, VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib , 40, 60, 8, 10, 40, yes, yes, 2, yes, Daily, 3 days, no, SIEM_TEST_server4 - 10.150.44.190, 10.150.44.0 - null, no, lead2=admin,lead3=user,Pradeep=user, 1, test10](1) -- Time elapsed: 14.36 s <<< FAILURE!
-java.lang.Error: Given VM Name test10 is Already Taken
-	at resourceManagementPageObjects.CreateNewPageObjects.GiveVMName(CreateNewPageObjects.java:616)
-	at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:38)
-	at FinalCalls.ResourceCreationFinalCall.CreateNew(ResourceCreationFinalCall.java:57)
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 50.14 s <<< FAILURE! -- in TestSuite
+FinalCalls.ResourceCreationFinalCall.CreateNew[Mysuru, India, EC_Windows_VM, Storage_Linux_Sep17 - 780GB, Ubuntu22.04 LTS(CLI)-PostgreSQL, 4000, horizontal, custom, VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib , 20, 60, 60, 4, 60, yes, yes, 1, no, Weekly, 4 weeks, yes, SIEM_TEST_server4 - 10.150.44.190, 10.150.44.0 - null, no, lead2=admin,karthik=admin,lead1=user,test1=admin, 1, TestAT1](1) -- Time elapsed: 25.98 s <<< FAILURE!
+javax.naming.InsufficientResourcesException: Insufficient resources to allow horizontal scaling
+	at resourceManagementPageObjects.CreateNewPageObjects.SetVcpu(CreateNewPageObjects.java:281)
+	at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:27)
+	at FinalCalls.ResourceCreationFinalCall.CreateNew(ResourceCreationFinalCall.java:62)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

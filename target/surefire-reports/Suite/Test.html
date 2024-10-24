@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Oct 23 19:01:43 IST 2024</td>
+<td>Started on:</td><td>Thu Oct 24 18:44:54 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>44 seconds (44972 ms)</td>
+<tr><td>Total time:</td><td>49 seconds (49434 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,17 +76,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='FinalCalls.ResourceCreationFinalCall.CreateNew()'><b>CreateNew</b><br>Test class: FinalCalls.ResourceCreationFinalCall<br>Parameters: Mysuru, India, AT_Testing, Storage_Linux_Sep17 - 780GB, Rocky Linux 9 SIEM, 200, horizontal, custom, VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib , 40, 60, 8, 10, 40, yes, yes, 2, yes, Daily, 3 days, no, SIEM_TEST_server4 - 10.150.44.190, 10.150.44.0 - null, no, lead2=admin,lead3=user,Pradeep=user, 1, test10</td>
-<td><div><pre>java.lang.Error: Given VM Name test10 is Already Taken
-	at resourceManagementPageObjects.CreateNewPageObjects.GiveVMName(CreateNewPageObjects.java:616)
-	at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:38)
-	at FinalCalls.ResourceCreationFinalCall.CreateNew(ResourceCreationFinalCall.java:57)
+<td title='FinalCalls.ResourceCreationFinalCall.CreateNew()'><b>CreateNew</b><br>Test class: FinalCalls.ResourceCreationFinalCall<br>Parameters: Mysuru, India, EC_Windows_VM, Storage_Linux_Sep17 - 780GB, Ubuntu22.04 LTS(CLI)-PostgreSQL, 4000, horizontal, custom, VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib , 20, 60, 60, 4, 60, yes, yes, 1, no, Weekly, 4 weeks, yes, SIEM_TEST_server4 - 10.150.44.190, 10.150.44.0 - null, no, lead2=admin,karthik=admin,lead1=user,test1=admin, 1, TestAT1</td>
+<td><div><pre>javax.naming.InsufficientResourcesException: Insufficient resources to allow horizontal scaling
+	at resourceManagementPageObjects.CreateNewPageObjects.SetVcpu(CreateNewPageObjects.java:281)
+	at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:27)
+	at FinalCalls.ResourceCreationFinalCall.CreateNew(ResourceCreationFinalCall.java:62)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1794486854", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1794486854'><pre>java.lang.Error: Given VM Name test10 is Already Taken
-	at resourceManagementPageObjects.CreateNewPageObjects.GiveVMName(CreateNewPageObjects.java:616)
-	at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:38)
-	at FinalCalls.ResourceCreationFinalCall.CreateNew(ResourceCreationFinalCall.java:57)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1479691423", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1479691423'><pre>javax.naming.InsufficientResourcesException: Insufficient resources to allow horizontal scaling
+	at resourceManagementPageObjects.CreateNewPageObjects.SetVcpu(CreateNewPageObjects.java:281)
+	at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:27)
+	at FinalCalls.ResourceCreationFinalCall.CreateNew(ResourceCreationFinalCall.java:62)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -120,8 +120,8 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 </pre></div></td>
-<td>14</td>
-<td>FinalCalls.ResourceCreationFinalCall@5ffead27</td></tr>
+<td>25</td>
+<td>FinalCalls.ResourceCreationFinalCall@a514af7</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -132,15 +132,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='FinalCalls.ResourceCreationFinalCall.Home()'><b>Home</b><br>Test class: FinalCalls.ResourceCreationFinalCall<br>Parameters: SIEM Server, Storage_Linux_Sep17</td>
+<td title='FinalCalls.ResourceCreationFinalCall.Home()'><b>Home</b><br>Test class: FinalCalls.ResourceCreationFinalCall<br>Parameters: Postgres DB, EC_Test_Linux_Storage_OCT_600</td>
 <td></td>
-<td>13</td>
-<td>FinalCalls.ResourceCreationFinalCall@5ffead27</td></tr>
+<td>15</td>
+<td>FinalCalls.ResourceCreationFinalCall@a514af7</td></tr>
 <tr>
-<td title='FinalCalls.ResourceCreationFinalCall.LoginPage()'><b>LoginPage</b><br>Test class: FinalCalls.ResourceCreationFinalCall</td>
+<td title='FinalCalls.ResourceCreationFinalCall.LoginPage()'><b>LoginPage</b><br>Test class: FinalCalls.ResourceCreationFinalCall<br>Parameters: Postgres DB</td>
 <td></td>
-<td>12</td>
-<td>FinalCalls.ResourceCreationFinalCall@5ffead27</td></tr>
+<td>5</td>
+<td>FinalCalls.ResourceCreationFinalCall@a514af7</td></tr>
 </table><p>
 </body>
 </html>
