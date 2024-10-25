@@ -27,18 +27,20 @@ public class ResouceCreationAllInOneCall extends Base {
 	private String StoragePathFromHome;
 	private String RowNumber;
 	
-	@Parameters("ResourceName")
+	
 	@BeforeTest
- 	public void intializeDriver(String ResourceName) throws IOException {
+ 	public void intializeDriver() throws IOException {
 		driver = InitializeDriver();
-		this.RowNumber=ResourceName;
+		
 	}
+	@Parameters("ResourceName")
 	@Test(priority = 1)
-	public void LoginPage() throws IOException {
+	public void LoginPage(String ResourceName) throws IOException {
 		log = new Login(driver);
 		log.LoginPageActions();
 		Hppo = new HomePagePageObjects(driver);
 		Hppo.ResourceManagementOption().click();
+		this.RowNumber=ResourceName;
 	}
 	@Test(priority = 2,dataProvider = "dataProvider",dependsOnMethods ="LoginPage",alwaysRun = false)
 	public void HomeAndCreateNew(String ResourceName, String StoragePathName,String Location, String ProjectName, String StoragePath, String OS, String Iops,
@@ -52,7 +54,7 @@ public class ResouceCreationAllInOneCall extends Base {
 		
 		
 		Home = new HomePage(driver);
-//		System.out.println(ResourceName);
+		System.out.println(ResourceName);
 		StoragePathFromHome = Home.HomePageActions(ResourceName, StoragePathName,RowNumber);
 		StoragePath = StoragePathFromHome;
 		CreateNew = new CreateNewPage(driver);

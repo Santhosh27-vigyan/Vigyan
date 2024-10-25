@@ -1,123 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="14" passed="1" failed="13" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-24T18:44:54 IST" name="Suite" finished-at="2024-10-24T18:45:43 IST" duration-ms="49434">
+  <suite started-at="2024-10-25T16:02:56 IST" name="Suite" finished-at="2024-10-25T16:07:04 IST" duration-ms="248420">
     <groups>
     </groups>
-    <test started-at="2024-10-24T18:44:54 IST" name="Test" finished-at="2024-10-24T18:45:43 IST" duration-ms="49434">
-      <class name="FinalCalls.ResourceCreationFinalCall">
-        <test-method is-config="true" signature="intializeDriver()[pri:0, instance:FinalCalls.ResourceCreationFinalCall@a514af7]" started-at="2024-10-24T18:44:54 IST" name="intializeDriver" finished-at="2024-10-24T18:44:56 IST" duration-ms="2673" status="PASS">
+    <test started-at="2024-10-25T16:02:56 IST" name="Test" finished-at="2024-10-25T16:07:04 IST" duration-ms="248420">
+      <class name="FinalCalls.ResouceCreationAllInOneCall">
+        <test-method is-config="true" signature="intializeDriver()[pri:0, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:02:56 IST" name="intializeDriver" finished-at="2024-10-25T16:03:01 IST" duration-ms="5197" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- intializeDriver -->
-        <test-method signature="LoginPage(java.lang.String)[pri:1, instance:FinalCalls.ResourceCreationFinalCall@a514af7]" started-at="2024-10-24T18:44:57 IST" name="LoginPage" finished-at="2024-10-24T18:45:02 IST" duration-ms="5006" status="PASS">
+        <test-method signature="LoginPage(java.lang.String)[pri:1, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:03:01 IST" name="LoginPage" finished-at="2024-10-25T16:03:09 IST" duration-ms="7981" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Postgres DB]]>
+                <![CDATA[All]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginPage -->
-        <test-method signature="Home(java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResourceCreationFinalCall@a514af7]" started-at="2024-10-24T18:45:02 IST" name="Home" data-provider="dataProvider" finished-at="2024-10-24T18:45:17 IST" depends-on-methods="FinalCalls.ResourceCreationFinalCall.LoginPage" duration-ms="15430" status="PASS">
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:03:10 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:03:27 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="16538" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Postgres DB]]>
+                <![CDATA[Windows Server]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[EC_Test_Linux_Storage_OCT_600]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Home -->
-        <test-method signature="CreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:FinalCalls.ResourceCreationFinalCall@a514af7]" started-at="2024-10-24T18:45:17 IST" name="CreateNew" data-provider="dataProvider" finished-at="2024-10-24T18:45:43 IST" depends-on-methods="FinalCalls.ResourceCreationFinalCall.Home" duration-ms="25978" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Mysuru, India]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[EC_Windows_VM]]>
+                <![CDATA[Storage_Windows_Sep17]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+                <![CDATA[Mysuru, India]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Ubuntu22.04 LTS(CLI)-PostgreSQL]]>
+                <![CDATA[AT_Testing]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[4000]]>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[horizontal]]>
+                <![CDATA[Test_Master_Copy_MC]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[custom]]>
+                <![CDATA[200]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
+                <![CDATA[vertical]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[20]]>
+                <![CDATA[custom]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[60]]>
+                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[60]]>
+                <![CDATA[40]]>
               </value>
             </param>
             <param index="11">
               <value>
-                <![CDATA[4]]>
+                <![CDATA[60]]>
               </value>
             </param>
             <param index="12">
               <value>
-                <![CDATA[60]]>
+                <![CDATA[2-6]]>
               </value>
             </param>
             <param index="13">
               <value>
-                <![CDATA[yes]]>
+                <![CDATA[2-6]]>
               </value>
             </param>
             <param index="14">
               <value>
-                <![CDATA[yes]]>
+                <![CDATA[60]]>
               </value>
             </param>
             <param index="15">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[no]]>
               </value>
             </param>
             <param index="16">
@@ -127,59 +111,69 @@
             </param>
             <param index="17">
               <value>
-                <![CDATA[Weekly]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="18">
               <value>
-                <![CDATA[4 weeks]]>
+                <![CDATA[yes]]>
               </value>
             </param>
             <param index="19">
               <value>
-                <![CDATA[yes]]>
+                <![CDATA[Daily]]>
               </value>
             </param>
             <param index="20">
               <value>
-                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+                <![CDATA[3 days]]>
               </value>
             </param>
             <param index="21">
               <value>
-                <![CDATA[10.150.44.0 - null]]>
+                <![CDATA[no]]>
               </value>
             </param>
             <param index="22">
               <value>
-                <![CDATA[no]]>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
               </value>
             </param>
             <param index="23">
               <value>
-                <![CDATA[lead2=admin,karthik=admin,lead1=user,test1=admin]]>
+                <![CDATA[10.150.44.0 - null]]>
               </value>
             </param>
             <param index="24">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[no]]>
               </value>
             </param>
             <param index="25">
               <value>
-                <![CDATA[TestAT1]]>
+                <![CDATA[lead2=admin,lead3=user,Pradeep=user]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[test10,test]]>
               </value>
             </param>
           </params>
-          <exception class="javax.naming.InsufficientResourcesException">
+          <exception class="java.lang.Error">
             <message>
-              <![CDATA[Insufficient resources to allow horizontal scaling]]>
+              <![CDATA[Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.]]>
             </message>
             <full-stacktrace>
-              <![CDATA[javax.naming.InsufficientResourcesException: Insufficient resources to allow horizontal scaling
-at resourceManagementPageObjects.CreateNewPageObjects.SetVcpu(CreateNewPageObjects.java:281)
-at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:27)
-at FinalCalls.ResourceCreationFinalCall.CreateNew(ResourceCreationFinalCall.java:62)
+              <![CDATA[java.lang.Error: Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.
+at resourceManagementPageObjects.CreateNewPageObjects.SelectVlan(CreateNewPageObjects.java:689)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:51)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -214,11 +208,2300 @@ at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 ]]>
             </full-stacktrace>
-          </exception> <!-- javax.naming.InsufficientResourcesException -->
+          </exception> <!-- java.lang.Error -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateNew -->
-      </class> <!-- FinalCalls.ResourceCreationFinalCall -->
+        </test-method> <!-- HomeAndCreateNew -->
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:03:27 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:03:41 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="13924" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Windows VDI]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Storage_Windows_Sep17]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AT_Testing]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[WINDOWS_10_PRO_MC_N]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[none]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Saved templates]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[ VCPUS 4 cores, RAM 4 GiB , Disk 56 Gib ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[40]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[2-6]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2-6]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Daily]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[6 days]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[10.150.44.0 - null]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[lead2=admin,lead3=user,Pradeep=user]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[test,test10]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.
+at resourceManagementPageObjects.CreateNewPageObjects.SelectVlan(CreateNewPageObjects.java:689)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:69)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomeAndCreateNew -->
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:03:41 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:03:57 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="16313" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Jupyter Notebook]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Storage_Linux_Sep17]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AT_Testing]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Jupyter Notebook]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[horizontal]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[custom]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[40]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[40]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[6 weeks]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[10.150.44.0 - null]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[karthik=user]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[test]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.apache.commons.math3.exception.MaxCountExceededException">
+            <message>
+              <![CDATA[illegal state: maximal count (3) exceeded]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.apache.commons.math3.exception.MaxCountExceededException: illegal state: maximal count (3) exceeded
+at resourceManagementPageObjects.CreateNewPageObjects.SetMaxGroupCount(CreateNewPageObjects.java:631)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:32)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.commons.math3.exception.MaxCountExceededException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomeAndCreateNew -->
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:03:57 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:04:15 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="17699" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Linux CLI]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Storage_Linux_Sep17]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AT_Testing]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Ubuntu 22.04 LTS (CLI)]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[horizontal]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[custom]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[40]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[40]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Daily]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[12 days]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[10.150.44.0 - null]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[lead2=admin,lead3=user,Pradeep=user]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[test10]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.
+at resourceManagementPageObjects.CreateNewPageObjects.SelectVlan(CreateNewPageObjects.java:689)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:37)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomeAndCreateNew -->
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:04:15 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:04:41 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="25862" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Linux VDI]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Storage_Linux_Sep17]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AT_Testing]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Rocky Linux 9.2 (GUI)]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[vertical]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[custom]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[40]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[2-12]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[4-8]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[70]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Daily]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[15 days]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[10.150.44.0 - null]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[lead2=admin,lead3=user,Pradeep=user]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[TestAT]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.
+at resourceManagementPageObjects.CreateNewPageObjects.SelectVlan(CreateNewPageObjects.java:689)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:51)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomeAndCreateNew -->
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:04:41 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:04:59 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="18469" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Load Balancer]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[October_14_STorage_Linux]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[AT_Testing]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Ubuntu 22.04 LTS (CLI) - HA Proxy]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[vertical]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[custom]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[40]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[4-6]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[6-8]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[50]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[12 months]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[10.150.37.0 - karthik]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[lead2=admin,lead3=user,Pradeep=user,karthik=admin,lead1=user,lead1=user,test1=admin]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[TestAT,TestAT2]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.
+at resourceManagementPageObjects.CreateNewPageObjects.SelectVlan(CreateNewPageObjects.java:689)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:51)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomeAndCreateNew -->
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:04:59 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:05:14 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="14928" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MySQL DB]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Testing_Linux_New_Storage]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Asset_Approval]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Ubuntu 22.04 LTS (CLI) - MySQL]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[horizontal]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[custom]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[40]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[80]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[2 weeks]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[10.150.44.0 - null]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[lead2=admin,lead3=user,Pradeep=user,karthik=admin,lead1=user,test1=admin,lead1=user]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[TestAT]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.apache.commons.math3.exception.MaxCountExceededException">
+            <message>
+              <![CDATA[illegal state: maximal count (3) exceeded]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.apache.commons.math3.exception.MaxCountExceededException: illegal state: maximal count (3) exceeded
+at resourceManagementPageObjects.CreateNewPageObjects.SetMaxGroupCount(CreateNewPageObjects.java:631)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:32)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.apache.commons.math3.exception.MaxCountExceededException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomeAndCreateNew -->
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:05:14 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:05:25 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="10734" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Postgres DB]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[EC_Test_Linux_Storage_OCT_600]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[EC_Windows_VM]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Ubuntu22.04 LTS(CLI)-PostgreSQL]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[4000]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[horizontal]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[custom]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[4 weeks]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[10.150.44.0 - null]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[lead2=admin,karthik=admin,lead1=user,test1=admin]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[TestAT1]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Given Value(60) Should be less than 32]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Given Value(60) Should be less than 32
+at resourceManagementPageObjects.CreateNewPageObjects.SetVcpu(CreateNewPageObjects.java:284)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:27)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomeAndCreateNew -->
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:05:25 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:05:37 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="11861" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SFTP Server]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Storage_Linux_Oct14]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[SIEM_Project]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Ubuntu22.04 LTS(CLI)-PostgreSQL]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[4000]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[horizontal]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[custom]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[8 weeks]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[10.150.44.0 - null]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[lead2=admin,karthik=admin,lead1=user,test1=admin]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[TestAT1]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Cannot locate option with text: Ubuntu22.04 LTS(CLI)-PostgreSQL
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.1', revision: '656257d8e9'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with text: Ubuntu22.04 LTS(CLI)-PostgreSQL
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.1', revision: '656257d8e9'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: driver.version: unknown
+at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:153)
+at resourceManagementPageObjects.CreateNewPageObjects.SelectOS(CreateNewPageObjects.java:213)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:21)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomeAndCreateNew -->
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:05:37 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:06:06 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="29625" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SIEM Server]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Storage_Linux_Oct14]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[SIEM_Project]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Rocky Linux 9 SIEM]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[500]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[vertical]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[custom]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[70]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[6-12]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[4-10]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[80]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[6 months]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[10.150.44.0 - null]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[lead2=admin,karthik=admin,lead1=user,test1=admin]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[TestAT,TestAT3]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.
+at resourceManagementPageObjects.CreateNewPageObjects.SelectVlan(CreateNewPageObjects.java:689)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:51)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomeAndCreateNew -->
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:06:06 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:06:23 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="16237" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Web-LAMP]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Storage_Linux_Oct14]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[EC_Ubuntu_VM]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Ubuntu 22.04 LTS (CLI) - LAMP(Linux + Apache + MySQL + PHP)]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[1000]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[none]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[custom]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[70]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[3 month]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[10.150.36.0 - teshtshweta]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[lead2=admin,karthik=admin,lead1=user,test1=admin]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[TestAT,TestAT3]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.
+at resourceManagementPageObjects.CreateNewPageObjects.SelectVlan(CreateNewPageObjects.java:689)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:69)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomeAndCreateNew -->
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:06:23 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:06:33 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="10545" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Web-LAPP]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[OCT_14_Linux_Storage]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[EC_Ubuntu_VM]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Ubuntu 22.04 LTS (CLI) - LAPP(Linux + Apache + Postgres + PHP)]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[2000]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[none]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[custom]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[70]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[3 month]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[10.150.44.0 - null]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[lead2=admin,karthik=admin,lead1=user,test1=admin]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[TestAT5,TestAT,TestAT3]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Note: This VLAN is fully utilized. Select a different VLAN or contact Admin for additional VLAN requirement.
+at resourceManagementPageObjects.CreateNewPageObjects.SelectVlan(CreateNewPageObjects.java:689)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:69)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomeAndCreateNew -->
+        <test-method signature="HomeAndCreateNew(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:FinalCalls.ResouceCreationAllInOneCall@4466af20]" started-at="2024-10-25T16:06:33 IST" name="HomeAndCreateNew" data-provider="dataProvider" finished-at="2024-10-25T16:07:04 IST" depends-on-methods="FinalCalls.ResouceCreationAllInOneCall.LoginPage" duration-ms="31221" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Web-Wordpress]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Storage_Linux_Sep17]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Mysuru, India]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Default_Projects]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Storage_Linux_Sep17 - 780GB]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Ubuntu 22.04 LTS (CLI) - WordPress]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[3000]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[horizontal]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[custom]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[VCPUS 8 cores, RAM 8 GiB , Disk 50 Gib ]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[20]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[60]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[50]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[12 months]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[SIEM_TEST_server4 - 10.150.44.190]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[10.1.2.0 - ]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[no]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[lead2=admin,karthik=admin,lead1=user,test1=admin]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[TestAT6]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.Error">
+            <message>
+              <![CDATA[Given VM Name TestAT6 is Already Taken]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Error: Given VM Name TestAT6 is Already Taken
+at resourceManagementPageObjects.CreateNewPageObjects.GiveVMName(CreateNewPageObjects.java:709)
+at resourceManagement.CreateNewPage.CreateNewPageActions(CreateNewPage.java:38)
+at FinalCalls.ResouceCreationAllInOneCall.HomeAndCreateNew(ResouceCreationAllInOneCall.java:61)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Error -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomeAndCreateNew -->
+      </class> <!-- FinalCalls.ResouceCreationAllInOneCall -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

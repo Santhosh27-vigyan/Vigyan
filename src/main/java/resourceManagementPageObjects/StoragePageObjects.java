@@ -2,6 +2,7 @@ package resourceManagementPageObjects;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,6 +23,7 @@ public class StoragePageObjects {
 		wait=new WebDriverWait(driver, Duration.ofSeconds(50));
 		js=(JavascriptExecutor)driver;
 		PageFactory.initElements(driver, this);
+		driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
 	}
 @FindBy(id = "add_storage_menu_item")
 private WebElement AddStorageButton;
@@ -36,9 +38,16 @@ private int	Strorageindex;
 public String GetAvailableSize(String StoragePath)
 {
 	wait.until(ExpectedConditions.visibilityOf(AddStorageButton));
+	wait.until(ExpectedConditions.elementToBeClickable(AddStorageButton));
+	try {
+		Thread.sleep(1000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	AddStorageButton.click();
 	wait.until(ExpectedConditions.visibilityOf(StorageTitle));
-wait.until(ExpectedConditions.visibilityOfAllElements(TableHeaderNames));
+	wait.until(ExpectedConditions.visibilityOfAllElements(TableHeaderNames));
 //	System.out.println(TableHeaderNames.size());
 	mainloop:	for (int i=0;i<TableHeaderNames.size();i++) {
 	//	System.out.println(TableHeaderNames.get(i).getText());

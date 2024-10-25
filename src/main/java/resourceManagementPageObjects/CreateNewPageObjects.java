@@ -8,7 +8,6 @@ import org.apache.commons.math3.exception.MaxCountExceededException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -19,21 +18,20 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import net.bytebuddy.asm.MemberSubstitution.FieldValue;
 
 public class CreateNewPageObjects {
 	public WebDriver driver;
 	private WebDriverWait wait;
 	private WebDriverWait wait2;
-	private WebDriverWait wait3;
 	private JavascriptExecutor js;
 	private Actions a;
+	private String Message;
 
 	public CreateNewPageObjects(WebDriver driver) {
 		this.driver = driver;
 		a = new Actions(driver);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(50));
-		wait2 = new WebDriverWait(driver, Duration.ofSeconds(1));
+		wait2 = new WebDriverWait(driver, Duration.ofSeconds(5));
 		js = (JavascriptExecutor) driver;
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		PageFactory.initElements(driver, this);
@@ -93,6 +91,8 @@ public class CreateNewPageObjects {
 	private WebElement AlertOkButton;
 	@FindBy(className = "bootbox-body")
 	private WebElement AlertMessage;
+	@FindBy(xpath = "//label[@for='ram']")
+	private WebElement RAMLable;
 	@FindBy(xpath = "//label[@for='ram']/parent::div //span[@class='irs-handle single']")
 	private WebElement RamScalingButton;
 	@FindBy(xpath = "//label[@for='ram']/parent::div //span[@class='irs-single']")
@@ -115,6 +115,8 @@ public class CreateNewPageObjects {
 	private WebElement VerticalScalingRamValueMin;
 	@FindBy(xpath = "//label[@for='ram_range_1']/parent::div //span[@class='irs-max']")
 	private WebElement VerticalScalingRamValueMax;
+	@FindBy(xpath = "//label[@for='auto_target_disk_size']")
+	private WebElement DiskLable;
 	@FindBy(xpath = "//label[@for='target_disk_size']/parent::div //span[@class='irs-handle single']")
 	private WebElement DiskSizeScalingButton;
 	@FindBy(xpath = "//label[@for='auto_target_disk_size']/parent::div //span[@class='irs-handle single']")
@@ -157,7 +159,7 @@ public class CreateNewPageObjects {
 	private WebElement SIEMVmList;
 	@FindBy(id = "vlanname")
 	private WebElement VlanOptions;
-	@FindBy(xpath = "//input[@class='form-control' and contains(@id,'new')]")
+	@FindBy(xpath = "//input[contains(@id,'new') and contains(@name,'new')]")
 	private List<WebElement> VmNameTextBox;
 	@FindBy(xpath = "//input[contains(@id,'new')]/following-sibling::span[contains(@class,'availability-status') and contains(@class,'available')]")
 	private List<WebElement> AvailabityMessage;
@@ -256,7 +258,6 @@ public class CreateNewPageObjects {
 	public void SetVcpu(String value) throws InsufficientResourcesException {
 		if (value.contains("-"))
 			throw new Error("Cannot have values in " + value + " format");
-
 		ConditionCheck(value, VcpuValueMin);
 		if (Integer.parseInt(value) <= Integer.parseInt(VcpuValueMax.getText())) {
 			VcpuScalingButton.click();
@@ -330,8 +331,8 @@ public class CreateNewPageObjects {
 					"Given Value(" + FromAndTo[1] + ") Should be less than " + VerticalVcpuScalingMax.getText());
 		}
 		// wait.until(ExpectedConditions.visibilityOf(VerticalVcpuScalingMin));
-		if (Integer.parseInt(FromAndTo[0]) >= 2) {
-			VerticalVcpuScalingFromButton.click();
+		if (Integer.parseInt(FromAndTo[0]) >= Integer.valueOf(min)) {
+		//	VerticalVcpuScalingFromButton.click();
 			mainloop1: while (true) {
 //				if (VerticalScalingVcpuFromValue.getAttribute("style").contains("visible")) {// System.out.println(VerticalScalingVcpuFromValue.getText()+"
 //																								// "+FromAndTo[0]);
@@ -349,22 +350,25 @@ public class CreateNewPageObjects {
 				String[] VerticalScalingVcpuFromValueGettext = ((String) js
 						.executeScript("return arguments[0].textContent;", VerticalScalingVcpuFromValue))
 						.split("\\s+G");
-				System.out.println(Integer.parseInt(VerticalScalingVcpuFromValueGettext[0].replace(" ", "").trim())
-						+ "  " + FromAndTo[1]);
+//				 System.out.println(!(Integer.parseInt(VerticalScalingVcpuFromValueGettext[0].replace(" ", "").trim()) < Integer
+//							.valueOf(FromAndTo[1]))+" test");
 				if (!(Integer.parseInt(VerticalScalingVcpuFromValueGettext[0].replace(" ", "").trim()) < Integer
 						.valueOf(FromAndTo[1]))) {
 					try {
+						wait2.until(ExpectedConditions.visibilityOf(Alert));
+						//System.out.println(Alert.isDisplayed());
 						if (Alert.isDisplayed()) {
 							wait.until(ExpectedConditions.elementToBeClickable(AlertOkButton));
+							Message = AlertMessage.getText();
 							try {
-								Thread.sleep(100);
+								Thread.sleep(200);
 							} catch (InterruptedException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
 							// js.executeScript("arguments[0].click();", AlertOkButton);
 							AlertOkButton.click();
-							throw new Error(AlertMessage.getText());
+							throw new Error(Message);
 						}
 					} catch (NoSuchElementException e) {
 						// TODO: handle exception
@@ -373,12 +377,15 @@ public class CreateNewPageObjects {
 				if (VerticalScalingVcpuFromValueGettext[0].equals(FromAndTo[0]))
 					break mainloop1;
 				else
-					a.moveToElement(VerticalVcpuScalingFromButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+					a.moveToElement(VerticalVcpuScalingFromButton).click().sendKeys(Keys.ARROW_RIGHT).build().perform();
 				try {
 					Thread.sleep(300);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+				}
+				catch (TimeoutException e) {
+					// TODO: handle exception
 				}
 			}
 			if (InsufficienterrorMessage.getAttribute("style").contains("inline"))
@@ -389,7 +396,8 @@ public class CreateNewPageObjects {
 	}
 
 	public void SetRam(String value) throws InsufficientResourcesException {
-		a.moveToElement(RamScalingButton).click().build().perform();
+		js.executeScript("arguments[0].scrollIntoView(true);", RAMLable);
+		// a.moveToElement(RamScalingButton).click().build().perform();
 		if (value.contains("-"))
 			throw new Error("Cannot have values in " + value + " format");
 		ConditionCheck(value, RamValueMin);
@@ -400,7 +408,7 @@ public class CreateNewPageObjects {
 				if (RamValue.getText().equals(value + " " + "GB"))
 					break mainloop;
 				else
-					a.moveToElement(RamScalingButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+					a.moveToElement(RamScalingButton).click().sendKeys(Keys.ARROW_RIGHT).build().perform();
 				try {
 					Thread.sleep(300);
 				} catch (InterruptedException e) {
@@ -466,7 +474,7 @@ public class CreateNewPageObjects {
 		} else {
 			throw new Error("Given Value(" + FromAndTo[1] + ") Should be less than " + Max[0]);
 		}
-		VerticalRamScalingFromButton.click();
+		//VerticalRamScalingFromButton.click();
 		if (Integer.parseInt(FromAndTo[0]) >= Integer.parseInt(min.replace(" ", ""))) {
 			mainloop1: while (true) {// System.out.println(VerticalScalingRamFromValue.getText()+" "+FromAndTo[0]);
 //				if (VerticalScalingRamFromValue.getAttribute("style").contains("visible")) {
@@ -493,13 +501,16 @@ public class CreateNewPageObjects {
 //				}
 				String[] RamFromValueGettext = ((String) js.executeScript("return arguments[0].textContent;",
 						VerticalScalingRamFromValue)).split("\\s+G");
-				System.out.println(!(Integer.parseInt(RamFromValueGettext[0].replace(" ", "").trim()) < Integer
-						.valueOf(FromAndTo[1])));
+//				System.out.println(!(Integer.parseInt(RamFromValueGettext[0].replace(" ", "").trim()) < Integer
+//						.valueOf(FromAndTo[1]))+"check");
+//				System.out.println(Alert.isDisplayed());
 				if (!(Integer.parseInt(RamFromValueGettext[0].replace(" ", "").trim()) < Integer
 						.valueOf(FromAndTo[1]))) {
 					try {
+						wait2.until(ExpectedConditions.visibilityOf(Alert));
 						if (Alert.isDisplayed()) {
 							wait.until(ExpectedConditions.elementToBeClickable(AlertOkButton));
+							Message = AlertMessage.getText();
 							try {
 								Thread.sleep(100);
 							} catch (InterruptedException e) {
@@ -508,16 +519,19 @@ public class CreateNewPageObjects {
 							}
 							// js.executeScript("arguments[0].click();", AlertOkButton);
 							AlertOkButton.click();
-							throw new Error(AlertMessage.getText());
+							throw new Error(Message);
 						}
 					} catch (NoSuchElementException e) {
 						// TODO: handle exception
 					}
+					catch (TimeoutException e) {
+						// TODO: handle exception
+					}
 				}
-				if (RamFromValueGettext[0].replace(" ", "").trim().equals(FromAndTo[0]) || FromAndTo[0].equals("2"))
+				if (RamFromValueGettext[0].replace(" ", "").trim().equals(FromAndTo[0]) || FromAndTo[0].equals(min.replace(" ", "")))
 					break mainloop1;
 				else
-					a.moveToElement(VerticalRamScalingFromButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+					a.moveToElement(VerticalRamScalingFromButton).click().sendKeys(Keys.ARROW_RIGHT).build().perform();
 				try {
 					Thread.sleep(300);
 				} catch (InterruptedException e) {
@@ -561,7 +575,8 @@ public class CreateNewPageObjects {
 	}
 
 	public void SetDiskSizeOfVerticalScaling(String value) throws InsufficientResourcesException {
-		a.moveToElement(VerticalScalingDiskSizeScalingButton).click().build().perform();
+		js.executeScript("arguments[0].scrollIntoView(true);", DiskLable);
+		// a.moveToElement(VerticalScalingDiskSizeScalingButton).click().build().perform();
 		ConditionCheck(value, VerticalScalingDiskSizeValueMin);
 		String[] Max = VerticalScalingDiskSizeValueMax.getText().split("\\s+G");
 		if (Integer.parseInt(value) <= Integer.parseInt(Max[0].replace(" ", ""))) {
@@ -570,7 +585,8 @@ public class CreateNewPageObjects {
 				if (VerticalScalingDiskSizeValue.getText().equals(value + " " + "GB"))
 					break mainloop;
 				else
-					a.moveToElement(VerticalScalingDiskSizeScalingButton).sendKeys(Keys.ARROW_RIGHT).build().perform();
+					a.moveToElement(VerticalScalingDiskSizeScalingButton).click().sendKeys(Keys.ARROW_RIGHT).build()
+							.perform();
 				try {
 					Thread.sleep(300);
 				} catch (InterruptedException e) {
@@ -658,9 +674,10 @@ public class CreateNewPageObjects {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println((Alert.isDisplayed()) + " Alert");
+			// System.out.println((Alert.isDisplayed()) + " Alert");
 			if (Alert.isDisplayed()) {
 				wait.until(ExpectedConditions.elementToBeClickable(AlertOkButton));
+				Message = AlertMessage.getText();
 				try {
 					Thread.sleep(100);
 				} catch (InterruptedException e) {
@@ -669,7 +686,7 @@ public class CreateNewPageObjects {
 				}
 				// js.executeScript("arguments[0].click();", AlertOkButton);
 				AlertOkButton.click();
-				throw new Error(AlertMessage.getText());
+				throw new Error(Message);
 			}
 		} catch (NoSuchElementException e) {
 			// TODO: handle exception
@@ -681,12 +698,13 @@ public class CreateNewPageObjects {
 		if (ScalingType.equalsIgnoreCase("Horizontal") && Names.length > 1) {
 			throw new Error("VM Names Cannot be more than for one for Horizontal Scaling");
 		}
-		a.moveToElement(CreateButton).build().perform();
-		for (int i = 0; i < Names.length; i++) {
-//			System.out.println(Names.length + Names[i]);
-//			System.out.println(VmNameTextBox.size() + "VmNameTextBox");
+		// Below line is not working in firefox
+		// a.moveToElement(CreateButton).build().perform();
+		js.executeScript("arguments[0].scrollIntoView(true);", CreateButton);
+		for (int i = 0; i < VmNameTextBox.size(); i++) {
+			// System.out.println(Names.length + Names[i]);
+			// System.out.println(VmNameTextBox.size() + "VmNameTextBox");
 			VmNameTextBox.get(i).sendKeys(Names[i]);
-			// System.out.println(AvailabityMessage.get(i).getText());
 			if (AvailabityMessage.get(i).getText().contains("Taken"))
 				throw new Error("Given VM Name " + Names[i] + " is " + AvailabityMessage.get(i).getText());
 		}

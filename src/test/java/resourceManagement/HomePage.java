@@ -16,7 +16,10 @@ public class HomePage {
 	public String  HomePageActions(String ResourceName,String StoragePathName,String RowNumber) {
 		Hppo = new HomePagePageObjects(driver);
 		if(!RowNumber.equalsIgnoreCase("All"))
+		{
+			System.out.println("count");
 		Hppo.ResourceManagementOption().click();
+		}
 		Spo=new StoragePageObjects(driver);
 		String StroragePathName=Spo.GetAvailableSize(StoragePathName);
 		Hppo.CreateResourceOption().click();

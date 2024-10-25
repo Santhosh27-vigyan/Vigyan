@@ -73,6 +73,6 @@ public class CreateNewPage {
 		Cnpo.ClickOnAssignRemoteUser();
 		Cnpo.AssignUserDetails(SelectAllUserCondition, usernamesAndRoles);
 		Cnpo.ClickOnSaveRoles();
-		Cnpo.ClickonCreateButton();
+		//Cnpo.ClickonCreateButton();
 	}
 }

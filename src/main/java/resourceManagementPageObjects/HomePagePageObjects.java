@@ -37,6 +37,14 @@ public class HomePagePageObjects {
 	public WebElement ResourceManagementOption()
 	{
 		wait.until(ExpectedConditions.visibilityOf(ResourceManagement));
+		System.out.println(ResourceManagement.isDisplayed());
+		//wait.until(ExpectedConditions.elementToBeClickable(ResourceManagement));
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return ResourceManagement;
 	}
 	public WebElement CreateResourceOption()
