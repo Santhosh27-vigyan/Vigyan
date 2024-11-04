@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test name="Test">
+  <!-- if we want to send Resource Name directly you can use your value instead of DefaultType-->
   <parameter name="ResourceName" value="DefaultType"></parameter>
     <classes>
       <class name="FinalCalls.ResouceCreationAllInOneCall"/>
