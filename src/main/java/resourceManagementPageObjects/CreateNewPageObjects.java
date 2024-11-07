@@ -718,24 +718,31 @@ public class CreateNewPageObjects {
 
 	public void AssignUserDetails(String SelectAllUserCondition, String usernamesAndRoles) {
 		String[] GetuserAndRole = usernamesAndRoles.split(",");
+		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("display_modal")));
 		if (SelectAllUserCondition.equals("yes")) {
 			if (!SelectAllUsersButton.isSelected()) {
 				js.executeScript("arguments[0].click();", SelectAllUsersButton);
 			}
 		}
+		
 		for (int i = 0; i < GetuserAndRole.length; i++) {
 			String[] GetuserAndItsRole = GetuserAndRole[i].split("=");
 			if (SelectAllUserCondition.equals("no")) {
+				boolean CustomerNamePresent=false;
 				for (int k = 0; i < UserNames.size(); k++) {
 					if (UserNames.get(k).findElement(By.xpath("./following-sibling::label")).getText()
 							.contains(GetuserAndItsRole[0])) {
+						CustomerNamePresent=true;
 						js.executeScript("arguments[0].scrollIntoView(true)", UserNames.get(k));
 						js.executeScript("arguments[0].click();", UserNames.get(k));
 						break;
 					}
 				}
+				if(!CustomerNamePresent)
+					throw new Error(GetuserAndItsRole[0]+" is not in the list");
 			}
+			
 			if (GetuserAndItsRole[1].equalsIgnoreCase("Admin")) {
 				for (int j = 0; j < AdminRadioButtons.size(); j++) {
 					if (UserNames.get(j).findElement(By.xpath("./following-sibling::label")).getText()
