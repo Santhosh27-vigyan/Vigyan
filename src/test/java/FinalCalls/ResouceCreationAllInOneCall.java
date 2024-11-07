@@ -47,7 +47,7 @@ public class ResouceCreationAllInOneCall extends Base {
 			String ScalingType, String GivenOption, String TemplateName, String LThreshold, String UThreshold,
 			String VcpuValue, String Ramvalue, String DiskSizeValue, String Value, String Condition, String Count,
 			String VMBackUpState, String BackUpFrequency, String Retention, String SIEMOption, String SIEMName,
-			String VlanName, String SelectAllUserCondition, String usernamesAndRoles, String NumberOfVirtualMachines,
+			String VlanName,String AssignRemoteUser, String SelectAllUserCondition, String usernamesAndRoles, String NumberOfVirtualMachines,
 			String VMName) throws InsufficientResourcesException
 	{
 		
@@ -60,7 +60,7 @@ public class ResouceCreationAllInOneCall extends Base {
 		CreateNew = new CreateNewPage(driver);
 		CreateNew.CreateNewPageActions(Location, ProjectName, StoragePath, OS, Iops, ScalingType, GivenOption,
 				TemplateName, LThreshold, UThreshold, VcpuValue, Ramvalue, DiskSizeValue, Value, Condition, Count,
-				VMBackUpState, BackUpFrequency, Retention, SIEMOption, SIEMName, VlanName, SelectAllUserCondition,
+				VMBackUpState, BackUpFrequency, Retention, SIEMOption, SIEMName, VlanName, AssignRemoteUser,SelectAllUserCondition,
 				usernamesAndRoles, NumberOfVirtualMachines, VMName);
 		
 	}

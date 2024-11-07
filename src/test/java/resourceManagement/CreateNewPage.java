@@ -1,18 +1,22 @@
 package resourceManagement;
+
 import javax.naming.InsufficientResourcesException;
 import org.openqa.selenium.WebDriver;
 import resourceManagementPageObjects.CreateNewPageObjects;
+
 public class CreateNewPage {
 	public WebDriver driver;
 	private CreateNewPageObjects Cnpo;
+
 	public CreateNewPage(WebDriver driver) {
 		this.driver = driver;
 	}
+
 	public void CreateNewPageActions(String Location, String ProjectName, String StoragePath, String OS, String Iops,
 			String ScalingType, String GivenOption, String TemplateName, String LThreshold, String UThreshold,
 			String VcpuValue, String Ramvalue, String DiskSizeValue, String Value, String Condition, String Count,
 			String VMBackUpState, String BackUpFrequency, String Retention, String SIEMOption, String SIEMName,
-			String VlanName, String SelectAllUserCondition, String usernamesAndRoles, String NumberOfVirtualMachines,
+			String VlanName,String AssignRemoteUser,String SelectAllUserCondition, String usernamesAndRoles, String NumberOfVirtualMachines,
 			String VMName) throws InsufficientResourcesException {
 		Cnpo = new CreateNewPageObjects(driver);
 		Cnpo.SelectLocation(Location);
@@ -70,9 +74,12 @@ public class CreateNewPage {
 			Cnpo.SetNumberOfVirtualMachines(NumberOfVirtualMachines);
 			Cnpo.GiveVMName(VMName, "none");
 		}
+		if(AssignRemoteUser.equals("yes"))
+		{
 		Cnpo.ClickOnAssignRemoteUser();
 		Cnpo.AssignUserDetails(SelectAllUserCondition, usernamesAndRoles);
 		Cnpo.ClickOnSaveRoles();
+		}
 		Cnpo.ClickonCreateButton();
 	}
 }
