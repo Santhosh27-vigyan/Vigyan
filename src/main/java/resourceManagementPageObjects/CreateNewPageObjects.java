@@ -730,7 +730,8 @@ public class CreateNewPageObjects {
 			String[] GetuserAndItsRole = GetuserAndRole[i].split("=");
 			if (SelectAllUserCondition.equals("no")) {
 				boolean CustomerNamePresent=false;
-				for (int k = 0; i < UserNames.size(); k++) {
+				System.out.println( UserNames.size());
+				for (int k = 0; k < UserNames.size(); k++) {
 					if (UserNames.get(k).findElement(By.xpath("./following-sibling::label")).getText()
 							.contains(GetuserAndItsRole[0])) {
 						CustomerNamePresent=true;

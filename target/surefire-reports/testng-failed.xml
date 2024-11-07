@@ -4,13 +4,14 @@
   <test thread-count="5" name="Test(failed)" verbose="0">
     <parameter name="ResourceName" value="DefaultType"/>
     <classes>
-      <class name="FinalCalls.ResouceCreationAllInOneCall">
+      <class name="FinalCalls.ResourceCreationFinalCall">
         <methods>
           <include name="LoginPage"/>
-          <include name="HomeAndCreateNew" invocation-numbers="0 1 2 3 4 5 6 7 8 9 10 11 12"/>
           <include name="intializeDriver"/>
+          <include name="Home"/>
+          <include name="CreateNew" invocation-numbers="0"/>
         </methods>
-      </class> <!-- FinalCalls.ResouceCreationAllInOneCall -->
+      </class> <!-- FinalCalls.ResourceCreationFinalCall -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
