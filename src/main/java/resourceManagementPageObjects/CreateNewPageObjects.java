@@ -689,7 +689,7 @@ public class CreateNewPageObjects {
 				throw new Error(Message);
 			}
 		} catch (NoSuchElementException e) {
-			// TODO: handle exception
+
 		}
 	}
 
